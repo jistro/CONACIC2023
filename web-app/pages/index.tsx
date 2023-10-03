@@ -3,7 +3,7 @@ import type { NextPage } from 'next';
 import Image from 'next/image';
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
-import { getNetwork, readContract, prepareWriteContract, writeContract } from '@wagmi/core';
+import { readContract, prepareWriteContract, writeContract } from '@wagmi/core';
 import React, { useEffect } from 'react';
 
 import GuessBook from '../abis/GuessBook.json';
@@ -13,8 +13,7 @@ import { useAccount } from 'wagmi';
 
 
 const Home: NextPage = () => {
-  //var direccionGuessBook = "0xEce6af52f8eDF69dd2C216b9C3f184e5b31750e9";
-  var direccionGuessBook = "0x008aD87EC78FDf57Fa3E84649cc7242eCDbDb8FE";
+  var direccionGuessBook = "0xEce6af52f8eDF69dd2C216b9C3f184e5b31750e9";
   const [isClient, setIsClient] = React.useState(false);
   const { address, isConnected } = useAccount();
   const [messages, setMessages] = React.useState<any>([]);
@@ -39,7 +38,7 @@ const Home: NextPage = () => {
     });
 
     prepareWriteContract({
-      address: direccionGuessBook,
+      address: direccionGuessBook as `0x${string}`,
       abi: GuessBook.abi,
       functionName: 'postMessage',
       account: address,
@@ -59,7 +58,7 @@ const Home: NextPage = () => {
     //set to any 
     var numeroMensajes: any;
     readContract({
-      address: direccionGuessBook,
+      address: direccionGuessBook as `0x${string}`,
       abi: GuessBook.abi,
       functionName: 'getCount',
       args: [],
@@ -68,7 +67,7 @@ const Home: NextPage = () => {
       console.log(numeroMensajes);
       for (var i = 0; i < numeroMensajes; i++) {
         readContract({
-          address: direccionGuessBook,
+          address: direccionGuessBook as `0x${string}`,
           abi: GuessBook.abi,
           functionName: 'getMessage',
           args: [i],
