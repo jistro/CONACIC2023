@@ -65,6 +65,8 @@
 }
 
 .card {
+  height: 100%;
+  width: 90%;
   margin: 1rem;
   flex-basis: 100%;
   padding: 1.5rem;
@@ -116,6 +118,7 @@
 
 
 .message_container {
+  width: 90%;
   display: flex;
   align-items: flex-start; /* Alinea los elementos en la parte superior */
   border: 1px solid #0000005f; /* Agrega un borde para separar los mensajes */

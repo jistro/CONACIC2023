@@ -129,14 +129,23 @@ const Home: NextPage = () => {
             ) : (
               <button className={styles.button} onClick={getMessages}>Actualizar mensajes</button>
             )}
+            <br />
+            < div className={styles.card}>
             <p>
-              El contrato GuessBook se encuentra en la red de la testnet de arbitrum con la siguiente direccion:
-            </p>
-            <p>
-              <a href={`https://testnet.arbiscan.io/address/${direccionGuessBook}`} target="_blank" rel="noopener noreferrer">
+              El contrato GuessBook se encuentra en la red de la testnet de arbitrum con la siguiente direccion: <a href={`https://testnet.arbiscan.io/address/${direccionGuessBook}`} target="_blank" rel="noopener noreferrer"
+              style={{ color: 'blue' }}
+              >
                 {direccionGuessBook}
               </a>
             </p>
+            <p>
+              Si necesitas testnet ETH puedes usar el faucet: <a href="https://faucet.triangleplatform.com/arbitrum/goerli" target="_blank" rel="noopener noreferrer"
+              style={{ color: 'blue' }}
+              >
+                faucet.triangleplatform.com/arbitrum/goerli
+              </a>
+            </p>
+            </div>
           </>
         ) : (
           <h1>Conecta tu wallet</h1>
