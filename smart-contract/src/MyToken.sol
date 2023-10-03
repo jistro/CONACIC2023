@@ -13,8 +13,7 @@ contract MyToken is ERC721, Ownable {
     constructor() ERC721("Tu pasaporte a web3", "PW3") {}
 
     function _baseURI() internal pure override returns (string memory) {
-        //return "ipfs://bafkreiaeb4cvzhqdd2iscfsnnsrm6de5bx5gevnlq7xxe4adabmt5yuqdm";
-        return "https://bafkreiaeb4cvzhqdd2iscfsnnsrm6de5bx5gevnlq7xxe4adabmt5yuqdm.ipfs.nftstorage.link/";
+        return "https://bafkreid7o6iv7igyinkw75paz5bqqjuejkwz6glhpe3krxetsoeh6awdmu.ipfs.nftstorage.link/";
     }
 
     function safeMint(address to) public returns (uint256) {

@@ -27,8 +27,7 @@ anvil :
 
 NETWORK_ARGS := --rpc-url http://localhost:8545 --private-key $(DEFAULT_ANVIL_KEY) --broadcast
 
-SUBNET_ARGS := --rpc-url http://127.0.0.1:9650/ext/bc/ZRA6TgzW4TzH4mqysq1VnR7rtqK3ff3sFFTPk1jrqbM7hLeB2/rpc --private-key $(DEFAULT_ANVIL_KEY) --broadcast --optimize 
-
+ALBITRUM_TESTNET_ARGS := --rpc-url $(ALBITRUM_RPC_URL) --private-key $(PRIVATE_KEY) --broadcast --verify --etherscan-api-key $(ALBITRUM_API_KEY) -vvvv
 
 compile:
 	forge compile
@@ -37,7 +36,9 @@ deployTest:
 	@echo "--==Deploying test contracts in ==--"
 	@forge script script/MyToken.s.sol:MyTokenScript $(NETWORK_ARGS)
 
-deployTestSubnet:
-	@echo "--==Deploying test contracts in ==--"
-	@forge script script/MyToken.s.sol:MyTokenScript $(SUBNET_ARGS)
+deployAlbitrum:
+	@echo "--==Deploying test contracts in Albitrum goerli testnet==--"
+	@forge script script/MyToken.s.sol:MyTokenScript $(ALBITRUM_TESTNET_ARGS)
+
+
 
