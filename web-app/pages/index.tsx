@@ -93,7 +93,11 @@ const Home: NextPage = () => {
         <ConnectButton />
         <h1 className={styles.title}>GuessBook</h1>
         <p className={styles.description}>Deja tu mensaje en la blockchain!!</p>
-        <Image src="https://ethereum.org/static/5dea0acbc8484c42006d7bbed32fa019/366e5/doge-computer.png" alt="logo" width="500" />
+        <img
+          src="./doge-computer.png" 
+          alt="logo" 
+          width="500" 
+        />
         {isConnected && isClient ? (
           <>
             <div className={styles.card}>
@@ -116,7 +120,11 @@ const Home: NextPage = () => {
                     </div>
                     {message.img != "" && (
                       <div className={styles.message_image}>
-                        <Image src={message.img} alt="imagen" width="300" />
+                        <img
+                        src={message.img} 
+                        alt="imagen" 
+                        width="300" 
+                        />
                       </div>
                     )}
                   </div>
