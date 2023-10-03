@@ -12,7 +12,7 @@ help:
 	@echo "  make anvil      run anvil"
 	@echo "  make compile    compile contracts"
 	@echo "  make deployTest deploy test contracts"
-	@echo "  make deployTestSubnet deploy test contracts in a avax subnet"
+	@echo "  make deployAlbitrum deploy test contracts in Albitrum goerli testnet"
 
 all: clean remove install update build
 
@@ -34,11 +34,11 @@ compile:
 
 deployTest:
 	@echo "--==Deploying test contracts in ==--"
-	@forge script script/MyToken.s.sol:MyTokenScript $(NETWORK_ARGS)
+	@forge script script/GuessBook.s.sol:GuessBookScript $(NETWORK_ARGS)
 
 deployAlbitrum:
 	@echo "--==Deploying test contracts in Albitrum goerli testnet==--"
-	@forge script script/MyToken.s.sol:MyTokenScript $(ALBITRUM_TESTNET_ARGS)
+	@forge script script/GuessBook.s.sol:GuessBookScript $(ALBITRUM_TESTNET_ARGS)
 
 
 
