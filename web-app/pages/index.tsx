@@ -1,5 +1,6 @@
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 import type { NextPage } from 'next';
+import Image from 'next/image';
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 import { getNetwork, readContract, prepareWriteContract, writeContract } from '@wagmi/core';
@@ -92,7 +93,7 @@ const Home: NextPage = () => {
         <ConnectButton />
         <h1 className={styles.title}>GuessBook</h1>
         <p className={styles.description}>Deja tu mensaje en la blockchain!!</p>
-        <img src="https://ethereum.org/static/5dea0acbc8484c42006d7bbed32fa019/366e5/doge-computer.png" alt="logo" width="500" />
+        <Image src="https://ethereum.org/static/5dea0acbc8484c42006d7bbed32fa019/366e5/doge-computer.png" alt="logo" width="500" />
         {isConnected && isClient ? (
           <>
             <div className={styles.card}>
@@ -115,7 +116,7 @@ const Home: NextPage = () => {
                     </div>
                     {message.img != "" && (
                       <div className={styles.message_image}>
-                        <img src={message.img} alt="imagen" width="300" />
+                        <Image src={message.img} alt="imagen" width="300" />
                       </div>
                     )}
                   </div>
