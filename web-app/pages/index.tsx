@@ -13,7 +13,8 @@ import { useAccount } from 'wagmi';
 
 
 const Home: NextPage = () => {
-  var direccionGuessBook = "0xEce6af52f8eDF69dd2C216b9C3f184e5b31750e9";
+  //var direccionGuessBook = "0xEce6af52f8eDF69dd2C216b9C3f184e5b31750e9";
+  var direccionGuessBook = "0x008aD87EC78FDf57Fa3E84649cc7242eCDbDb8FE";
   const [isClient, setIsClient] = React.useState(false);
   const { address, isConnected } = useAccount();
   const [messages, setMessages] = React.useState<any>([]);
@@ -113,9 +114,9 @@ const Home: NextPage = () => {
             <br />
             {messages ? (
               <div >
-                {messages.map((message: any) => (
-                  <div className={styles.message_container}>
-                    <div className={styles.message_sender}>
+                {messages.map((message: any, index: number) => (
+                  <div className={styles.message_container} key={index}>
+                    <div className={styles.message}>
                       <b>Usuario</b>
                       <p>{message.sender}</p>
                       <br />
