@@ -93,10 +93,13 @@ const Home: NextPage = () => {
         <ConnectButton />
         <h1 className={styles.title}>GuessBook</h1>
         <p className={styles.description}>Deja tu mensaje en la blockchain!!</p>
-        <img
-          src="./doge-computer.png" 
-          alt="logo" 
-          width="500" 
+        <Image
+          src="/doge-computer.png" 
+          alt="imagen"
+          width={0}
+  height={0}
+  sizes="100vw"
+  style={{ width: '500px', height: 'auto' }} // optional
         />
         {isConnected && isClient ? (
           <>
