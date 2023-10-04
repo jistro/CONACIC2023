@@ -94,12 +94,13 @@ const Home: NextPage = () => {
         <h1 className={styles.title}>GuessBook</h1>
         <p className={styles.description}>Deja tu mensaje en la blockchain!!</p>
         <Image
-          src="/doge-computer.png" 
+          src="/doge-computer.png"
           alt="imagen"
           width={0}
-  height={0}
-  sizes="100vw"
-  style={{ width: '500px', height: 'auto' }} // optional
+          height={0}
+          sizes="100vw"
+          style={{ width: '400px', height: '100%', margin: '0 '
+        }} // optional
         />
         {isConnected && isClient ? (
           <>
@@ -112,21 +113,22 @@ const Home: NextPage = () => {
             </div>
             <br />
             {messages ? (
-              <div >
+              <div className={styles.gridMSG}>
                 {messages.map((message: any, index: number) => (
                   <div className={styles.message_container} key={index}>
                     <div className={styles.message}>
                       <b>Usuario</b>
-                      <p>{message.sender}</p>
+                      <p className={styles.txHash} >{message.sender}</p>
                       <br />
                       <h2>{message.message}</h2>
                     </div>
                     {message.img != "" && (
                       <div className={styles.message_image}>
                         <img
-                        src={message.img} 
-                        alt="imagen" 
-                        width="300" 
+                          src={message.img}
+                          alt="imagen"
+                          width="300"
+                          className={styles.message_image}
                         />
                       </div>
                     )}
@@ -143,20 +145,16 @@ const Home: NextPage = () => {
             )}
             <br />
             < div className={styles.card}>
-            <p>
-              El contrato GuessBook se encuentra en la red de la testnet de arbitrum con la siguiente direccion: <a href={`https://testnet.arbiscan.io/address/${direccionGuessBook}`} target="_blank" rel="noopener noreferrer"
-              style={{ color: 'blue' }}
-              >
-                {direccionGuessBook}
-              </a>
-            </p>
-            <p>
-              Si necesitas testnet ETH puedes usar el faucet: <a href="https://faucet.triangleplatform.com/arbitrum/goerli" target="_blank" rel="noopener noreferrer"
-              style={{ color: 'blue' }}
-              >
-                faucet.triangleplatform.com/arbitrum/goerli
-              </a>
-            </p>
+              <p>
+                El contrato GuessBook se encuentra en la red de la testnet de arbitrum con la siguiente direccion: <a href={`https://testnet.arbiscan.io/address/${direccionGuessBook}`} className={styles.txHash} target="_blank" rel="noopener noreferrer" style={{ color: 'blue' }}>
+                  {direccionGuessBook}
+                </a>
+              </p>
+              <p>
+                Si necesitas testnet ETH puedes usar el faucet:  <a href="https://faucet.triangleplatform.com/arbitrum/goerli" target="_blank" rel="noopener noreferrer" style={{ color: 'blue', wordWrap: 'break-word' }}>
+                  faucet.triangleplatform.com/arbitrum/goerli
+                </a>
+              </p>
             </div>
           </>
         ) : (
